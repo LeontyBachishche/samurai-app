@@ -4,7 +4,7 @@ const Profile = () => {
   return (
     <div className='content'>
       <div>
-        <img src='http://clipart-library.com/images/ATbreEAac.jpg' alt="asdasf" />
+        <img src='http://clipart-library.com/images/ATbreEAac.jpg' alt="ramdom text" />
       </div>
       <div>
         ava + description
