@@ -1,26 +1,17 @@
 import React from "react";
+import MyPosts from "./MyPosts/MyPosts";
+import s from './Profile.module.css'
 
 const Profile = () => {
   return (
-    <div className='content'>
+    <div className={s.content}>
       <div>
         <img src='http://clipart-library.com/images/ATbreEAac.jpg' alt="ramdom text" />
       </div>
       <div>
         ava + description
       </div>
-      <div>
-        My posts
-        <div>
-          Post 1
-        </div>
-        <div>
-          Post 2
-        </div>
-        <div>
-          Post 3
-        </div>
-      </div>
+      <MyPosts />
     </div>
   )
 }
