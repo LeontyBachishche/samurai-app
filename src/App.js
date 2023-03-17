@@ -4,7 +4,10 @@ import './App.css';
 import Dialogs from './component/Dialogs/Dialogs';
 import Header from './component/Header/Header';
 import Navbar from './component/Navbar/Navbar';
+import News from './component/News/News';
+import Music from './component/Music/Music';
 import Profile from './component/Profile/Profile';
+import Setting from './component/Setting/Setting';
 
 const App = () => {
   return (
@@ -16,6 +19,9 @@ const App = () => {
           <Routes>
             <Route path='/profile' element={<Profile />} />
             <Route path='/dialogs' element={<Dialogs />} />
+            <Route path='/news' element={<News />} />
+            <Route path='/music' element={<Music />} />
+            <Route path='/setting' element={<Setting />} />
           </Routes>
         </div>
       </div>
