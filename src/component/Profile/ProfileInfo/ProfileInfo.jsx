@@ -7,7 +7,7 @@ const ProfileInfo = () => {
       <div>
         <img src='http://clipart-library.com/images/ATbreEAac.jpg' alt="ramdom text" />
       </div>
-      <div>
+      <div className={s.descriptionBlock}>
         ava + description
       </div>
     </div>
