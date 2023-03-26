@@ -6,7 +6,7 @@ const Post = (props) => {
     <div className={s.item}>
       <div>
         <img src='https://fashion-stickers.ru/35322-thickbox_default/sobaka.jpg' alt="ramdom text" />
-        {props.m}
+        {props.message}
       </div>
       <div>
         like {props.like}
