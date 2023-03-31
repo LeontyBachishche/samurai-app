@@ -6,10 +6,13 @@ const MyPosts = () => {
 
   let postsData = [
     { id: 1, message: 'First Post', likeCount: '23' },
+    { id: 1, message: 'Second Post', likeCount: '26' },
     { id: 1, message: 'It\'s second Post', likeCount: '11' }
+    
   ]
 
   let postsElement = postsData.map(p => <Post message={p.message} like={p.likeCount} />)
+
 
   return (
     <div className={s.postBlock}>
