@@ -4,7 +4,8 @@ let state = {
       { id: 1, message: 'First Post', likeCount: '23' },
       { id: 1, message: 'Second Post', likeCount: '26' },
       { id: 1, message: 'It\'s second Post', likeCount: '11' }
-    ]
+    ],
+    newPostText: 'random text'
   },
   dialogsPage: {
     messages: [

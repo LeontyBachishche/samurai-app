@@ -3,61 +3,53 @@ import s from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogItem'
 import Message from './Message/Message';
 
-// let arr = [1, 4, 3, 5, 11, 6, 2, 6]
-// const bubble = () => {
-//   let len = arr.length
-//   while (len !== 0) {
-//     let max_index = 0
-//     for (let i = 1; i < len; i++) {
-//       if (arr[i - 1] > arr[i]) {
-//         let temp = arr[i - 1]
-//         arr[i - 1] = arr[i]
-//         arr[i] = temp
-//         max_index = i
+
+// const array = [7, 4, 1, 3, 5, 12, 11, 6, 2, 6]
+// const selectionSort = (a) => {
+//   for (let i = 0; i < a.length; i++) {
+//     let indexMin = i
+//     for (let j = i + 1; j < a.length; j++) {
+//       if (a[j] < a[indexMin]) {
+//         indexMin = j
 //       }
-//       console.log(arr)
 //     }
-//     len = max_index
+//     let tmp = a[i]
+//     a[i] = a[indexMin]
+//     a[indexMin] = tmp
 //   }
+//   return a
 // }
-// bubble(arr)
+// console.log(selectionSort(array))
 
-// let array = [1,4,7,3,5,11,6,2,6]
-// const bubbleSort = () => {
-//   for (let i = 0, endI = array.length - 1; i < endI; i++) {
-//       for (let j = 0, endJ = endI - i; j < endJ; j++) {
-//           if (array[j] > array[j + 1]) {
-//               let swap = array[j];
-//               array[j] = array[j + 1];
-//               array[j + 1] = swap;
-//           }
+// const arr = [7, 4, 1, 3, 5, 12, 11, 6, 2, 6]
+// let count = 0
+// const bubbleSort = (a) => {
+//   for (let i = 0; i < a.length; i++) {
+//     for (let j = 0; j < a.length; j++) {
+//       if (a[j + 1] < a[j]) {
+//         let tmp = a[j]
+//         a[j] = a[j + 1]
+//         a[j + 1] = tmp
 //       }
+//       count += 1
+//     }
 //   }
-//   console.log(array)
+//   return a
 // }
 
-// bubbleSort(array)
-
-// let arr = [1,4,7,3,5,11,6,2,6]
-// const bubbleSort = () => {
-//   for (let i = 0, endI = arr.length - 1; i < endI; i++) {
-//       let wasSwap = false;
-//       for (let j = 0, endJ = endI - i; j < endJ; j++) {
-//           if (arr[j] > arr[j + 1]) {
-//               [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-//               wasSwap = true;
-//           }
-//       }
-//       if (!wasSwap) break;
-//   }
-//   console.log(arr)
-// };
-// bubbleSort()
+// console.log(bubbleSort(arr))
+// console.log('count = ', count)
 
 const Dialogs = (props) => {
 
   let dialogsElements = props.state.dialogs.map(d => <DialogItem name={d.name} id={d.id} />)
   let messagesElement = props.state.messages.map(m => <Message message={m.message} />)
+
+  let newMessage = React.createRef()
+  let textAlert = () => {
+    let text = newMessage.current.value
+    alert(text)
+  }
 
   return (
     <div className={s.dialogs}>
@@ -67,8 +59,15 @@ const Dialogs = (props) => {
       <div className={s.messages}>
         {messagesElement}
       </div>
+      <div>
+        <textarea placeholder="Write some to alert" ref={newMessage}></textarea>
+      </div>
+      <div>
+        <button onClick={textAlert}>Add text</button>
+      </div>
     </div>
   )
 }
+
 
 export default Dialogs;
